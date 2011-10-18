@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
+	<meta charset="UTF-8">
 	<meta name="viewport" content="user-scalable=no,width=device-width">
 	<title>PhoneGap</title>
 	<link rel="stylesheet" type="text/css" href="jquery.mobile-1.0rc1.min.css" />
@@ -8,6 +9,7 @@
 	<script type="text/javascript" charset="utf-8" src="phonegap-1.1.0.js"></script>
 	<script type="text/javascript" charset="utf-8" src="jquery.1.6.4.min.js"></script>
 	<script type="text/javascript" charset="utf-8" src="jquery.mobile-1.0rc1.min.js"></script>
+	<script type="text/javascript" charset="utf-8" src="google_translator.jquery.js"></script>
   </head>
   <body>
 	<div data-role="header">
@@ -21,17 +23,17 @@
 
 	<div data-role="fieldcontain">
 	  <label for="from_lang" class="from_lang">From Language</label>
-	  <select name="from_lang" id="from_lang">
-		<option value="en">English</option>
-		<option value="jp">Japanese</option>
+	  <select name="from_lang" id="from_lang" onchange="$('#from_lang').inverseLanguage('#to_lang');">
+		<option value="en" selected="selected">English</option>
+		<option value="ja">Japanese</option>
 	  </select>
 	</div>
 
 	<div data-role="fieldcontain">
 	  <label for="to_lang" class="to_lang">To Language</label>
-	  <select name="to_lang" id="to_lang">
+	  <select name="to_lang" id="to_lang" onchange="$('#to_lang').inverseLanguage('#from_lang');">
 		<option value="en">English</option>
-		<option value="jp">Japanese</option>
+		<option value="ja" selected="selected">Japanese</option>
 	  </select>
 	</div>
 
@@ -40,7 +42,8 @@
 	  <textarea cols="40" rows="8" name="translated_text" id="translated_text"></textarea>
 	</div>
 
-	<button type="submit" data-theme="b" name="submit" value="submit-value">Submit</button>
+	<button id="translate_button" type="submit" name="submit"
+            onclick="translate();">Translate</button>
 
 	<div data-role="footer">
 	  <div data-role="navbar">
