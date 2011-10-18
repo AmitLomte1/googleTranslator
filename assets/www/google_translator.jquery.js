@@ -2,10 +2,17 @@
 var result = "";
 
 function translate(text, from, to){
-  $.mobile.showPageLoadingMsg();
+
   text = encodeURIComponent((text || $('#text_to_translate').val()));
   from = encodeURIComponent((from || $("#from_lang").val()));
   to = encodeURIComponent((to || $("#to_lang").val()));
+
+  if (text == "") {
+    navigator.notification.alert('Please type the text to translate.', null, 'Error', 'close');
+    return null;
+  }
+
+  $.mobile.showPageLoadingMsg();
   $.getJSON("https://ajax.googleapis.com/ajax/services/language/translate", "v=1.0&q="+text+"&langpair="+from+"%7C"+to+"&callback=?", function(data){
     result = data.responseData.translatedText;
     $("#translated_text").html(result);
