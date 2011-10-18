@@ -12,40 +12,41 @@
 	<script type="text/javascript" charset="utf-8" src="google_translator.jquery.js"></script>
   </head>
   <body>
-	<div data-role="header">
+	<header data-role="header">
 	  <h1>Translate Me</h1>
-	</div>
+	</hader>
 
-	<div data-role="fieldcontain">
-	  <label for="text_to_translate">Text to translate</label>
-	  <textarea cols="40" rows="8" name="text_to_translate" id="text_to_translate"></textarea>
-	</div>
+    <form>
+	  <div data-role="fieldcontain">
+		<label for="text_to_translate">Text to translate</label>
+		<textarea cols="40" rows="8" name="text_to_translate" id="text_to_translate"></textarea>
+	  </div>
 
-	<div data-role="fieldcontain">
-	  <label for="from_lang" class="from_lang">From Language</label>
-	  <select name="from_lang" id="from_lang" onchange="$('#from_lang').inverseLanguage('#to_lang');">
-		<option value="en" selected="selected">English</option>
-		<option value="ja">Japanese</option>
-	  </select>
-	</div>
+	  <div data-role="fieldcontain">
+		<label for="from_lang" class="from_lang">From Language</label>
+		<select name="from_lang" id="from_lang" onchange="$('#from_lang').inverseLanguage('#to_lang');">
+		  <option value="en" selected="selected">English</option>
+		  <option value="ja">Japanese</option>
+		</select>
+	  </div>
 
-	<div data-role="fieldcontain">
-	  <label for="to_lang" class="to_lang">To Language</label>
-	  <select name="to_lang" id="to_lang" onchange="$('#to_lang').inverseLanguage('#from_lang');">
-		<option value="en">English</option>
-		<option value="ja" selected="selected">Japanese</option>
-	  </select>
-	</div>
+	  <div data-role="fieldcontain">
+		<label for="to_lang" class="to_lang">To Language</label>
+		<select name="to_lang" id="to_lang" onchange="$('#to_lang').inverseLanguage('#from_lang');">
+		  <option value="en">English</option>
+		  <option value="ja" selected="selected">Japanese</option>
+		</select>
+	  </div>
 
-	<div data-role="fieldcontain">
-	  <label for="translated_text">Translated Text</label>
-	  <textarea cols="40" rows="8" name="translated_text" id="translated_text"></textarea>
-	</div>
+	  <div data-role="fieldcontain">
+		<label for="translated_text">Translated Text</label>
+		<textarea cols="40" rows="8" name="translated_text" id="translated_text"></textarea>
+	  </div>
+    </form>
 
-	<button id="translate_button" type="submit" name="submit"
-            onclick="translate();">Translate</button>
+	<button id="translate_button" onclick="translate();">Translate</button>
 
-	<div data-role="footer">
+	<footer data-role="footer">
 	  <div data-role="navbar">
 		<ul>
 		  <li><a href="#" class="ui-btn-active" data-icon="star">Home</a></li>
@@ -55,6 +56,6 @@
 		  <li><a href="#" data-icon="info">Blank</a></li>
 		</ul>
 	  </div>
-	</div>
+	</footer>
   </body>
 </html>
