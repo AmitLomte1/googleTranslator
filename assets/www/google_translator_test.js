@@ -18,7 +18,7 @@ $(document).ready(function(){
         equals(result.responseData.translatedText, "I have now created a page to translate.",
                "'私は今翻訳するためのページを作っています。' should be translated to 'I have now created a page to translate.'.");
       } else {
-        ok(true, 'HTTP Error:'+result.responseDetails);
+        ok(false, 'HTTP Error:'+result.responseDetails);
       }
     },1000);
   });
