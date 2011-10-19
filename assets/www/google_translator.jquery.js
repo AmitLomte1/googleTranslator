@@ -37,8 +37,12 @@ function inverseLang(lang){
     }
 
     $.getJSON("https://ajax.googleapis.com/ajax/services/language/translate", "v=1.0&q="+text+"&langpair="+from+"%7C"+to+"&callback=?", function(data){
-      result = data.responseData.translatedText;
-      $(options.show).html(result);
+      result = data;
+      if(data.responseStatus == "200"){
+        $(options.show).html(data.responseData.translatedText);
+      } else {
+        navigator.notification.alert(data.responseDetails, null, 'Error', 'close');
+      }
       $.mobile.hidePageLoadingMsg();
     });
 
