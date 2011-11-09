@@ -1,19 +1,7 @@
 // this is for testing.
 var result = "";
 
-function inverseLang(lang){
-  return (lang == "ja" ? "en" : "ja");
-};
-
 (function(jQuery){
-
-  jQuery.fn.inverseLanguage = function(selector){
-    this.each(function(){
-      $(selector).val(inverseLang($(this).val()));
-    });
-
-    return this;
-  };
 
   jQuery.fn.translate = function(options){
     var options = jQuery.extend({

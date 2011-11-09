@@ -1,11 +1,4 @@
 $(document).ready(function(){
-  test("inverse a language", function(){
-    equals(inverseLang("ja"), "en",
-           "inverseLang should return en if ja is given");
-    equals(inverseLang("en"), "ja",
-           "inverseLang should return ja if en is given");
-  });
-
   asyncTest("tanslate text", function(){
     $().translate({
       text: "私は今翻訳するためのページを作っています。",
