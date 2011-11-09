@@ -24,7 +24,8 @@ var result = "";
       return null;
     }
 
-    $.getJSON("https://ajax.googleapis.com/ajax/services/language/translate", "v=1.0&q="+text+"&langpair="+from+"%7C"+to+"&callback=?", function(data){
+    $.getJSON("https://ajax.googleapis.com/ajax/services/language/translate",
+              "v=1.0&q="+text+"&langpair="+from+"%7C"+to+"&callback=?", function(data){
       result = data;
       if(data.responseStatus == "200"){
         $(options.show).html(data.responseData.translatedText);
